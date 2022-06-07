@@ -102,7 +102,7 @@ public class CRUDCombo extends AppCompatActivity {
     public void modificar(View view) {
         if(!et_entrada.getText().toString().isEmpty() && !et_plato.getText().toString().isEmpty()
                 && !et_postre.getText().toString().isEmpty() && !et_precio.getText().toString().isEmpty()
-        && !tv_numero.getText().toString().isEmpty()) {
+        && !tv_numero.getText().toString().isEmpty() && !tv_url.getText().toString().isEmpty()) {
             Combo combo = new Combo();
             combo.numCombo = Integer.parseInt(tv_numero.getText().toString());
             combo.entrada = et_entrada.getText().toString();
@@ -125,7 +125,8 @@ public class CRUDCombo extends AppCompatActivity {
     public void Eliminar(View view) {
         if(!et_entrada.getText().toString().isEmpty() && !et_plato.getText().toString().isEmpty()
                 && !et_postre.getText().toString().isEmpty() && !et_precio.getText().toString().isEmpty()
-                && !tv_numero.getText().toString().isEmpty()) {
+                && !tv_numero.getText().toString().isEmpty()
+                && !tv_url.getText().toString().isEmpty()) {
             Combo combo = new Combo();
             combo.numCombo = Integer.parseInt(tv_numero.getText().toString());
             combo.entrada = et_entrada.getText().toString();
@@ -168,6 +169,7 @@ public class CRUDCombo extends AppCompatActivity {
             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                 @Override
                 public void onComplete(@NonNull Task<Uri> task) {
+                    Toast.makeText(CRUDCombo.this, "CARGANDO IMAGEN", Toast.LENGTH_LONG).show();
                     Uri urlDescarga = task.getResult();
                     Log.i("URL", urlDescarga.toString());
                     tv_url.setText(urlDescarga.toString());
