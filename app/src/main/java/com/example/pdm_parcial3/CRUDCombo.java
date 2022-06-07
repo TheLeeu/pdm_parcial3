@@ -109,6 +109,7 @@ public class CRUDCombo extends AppCompatActivity {
             combo.platoFuerte = et_plato.getText().toString();
             combo.postre = et_postre.getText().toString();
             combo.precio = Double.parseDouble(et_precio.getText().toString());
+            combo.img = tv_url.getText().toString();
 
             comboDAO cDao = db.ComboDAO();
 
@@ -131,6 +132,7 @@ public class CRUDCombo extends AppCompatActivity {
             combo.platoFuerte = et_plato.getText().toString();
             combo.postre = et_postre.getText().toString();
             combo.precio = Double.parseDouble(et_precio.getText().toString());
+            combo.img = tv_url.getText().toString();
 
             comboDAO cDao = db.ComboDAO();
 
