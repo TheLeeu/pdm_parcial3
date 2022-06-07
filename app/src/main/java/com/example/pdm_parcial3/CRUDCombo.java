@@ -64,15 +64,18 @@ public class CRUDCombo extends AppCompatActivity {
         et_precio.setText(getIntent().getStringExtra("precio"));
         tv_url.setText(getIntent().getStringExtra("url"));
 
+
         if(tv_numero.getText().toString().isEmpty()){
             btn_modificar.setVisibility(View.INVISIBLE);
             btn_eliminar.setVisibility(View.INVISIBLE);
             btn_modificar.setEnabled(false);
             btn_eliminar.setEnabled(false);
+
         }else{
             btn_insertar.setVisibility(View.INVISIBLE);
             btn_insertar.setEnabled(false);
         }
+        Glide.with(this).load(getIntent().getStringExtra("url")).into(img);
 
     }
 
@@ -164,7 +167,7 @@ public class CRUDCombo extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Uri> task) {
                     Uri urlDescarga = task.getResult();
-                    Log.i("URLl", urlDescarga.toString());
+                    Log.i("URL", urlDescarga.toString());
                     tv_url.setText(urlDescarga.toString());
                     Glide.with(getApplicationContext()).load(urlDescarga).into(img);
                 }
