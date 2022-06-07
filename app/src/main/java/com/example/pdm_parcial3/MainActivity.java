@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("plato",listData.get(i).platoFuerte);
                 intent.putExtra("postre",listData.get(i).postre);
                 intent.putExtra("precio",String.valueOf(listData.get(i).precio));
+                intent.putExtra("url",listData.get(i).img);
                 startActivity(intent);
             }
         });
